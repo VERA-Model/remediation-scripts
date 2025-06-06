@@ -1,0 +1,9 @@
+# Azure Policy Assignment - Disable Legacy Authentication Protocols
+
+type: Microsoft.Authorization/policyAssignments
+name: disable-legacy-auth
+properties:
+  displayName: Disable Legacy Authentication
+  policyDefinitionId: /providers/Microsoft.Authorization/policyDefinitions/DisableLegacyAuth
+  enforcementMode: Default
+  parameters: {}
