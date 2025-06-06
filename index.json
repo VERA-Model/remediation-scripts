@@ -1,4 +1,9 @@
 {
+  "CVE-2022-30190.ps1": {
+    "filename": "scripts/CVE-2022-30190.ps1",
+    "description": "Auto-added remediation script for CVE-2022-30190.ps1",
+    "language": "PowerShell"
+  },
   "CVE-2023-4863.ps1": {
     "filename": "scripts/CVE-2023-4863.ps1",
     "description": "Auto-added remediation script for CVE-2023-4863.ps1",
