@@ -24,6 +24,11 @@
     "description": "Auto-added remediation script for cis-5.2-log-retention.ps1",
     "language": "PowerShell"
   },
+  "defender-enable-tamper-protection.ps1": {
+    "filename": "scripts/defender-enable-tamper-protection.ps1",
+    "description": "Auto-added remediation script for defender-enable-tamper-protection.ps1",
+    "language": "PowerShell"
+  },
   "test-update.ps1": {
     "filename": "scripts/test-update.ps1",
     "description": "Auto-added remediation script for test-update.ps1",
