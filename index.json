@@ -1,7 +1,7 @@
 {
-  "placeholder": {
-    "filename": "scripts/fix-me.ps1",
-    "description": "This is a placeholder to activate GitHub Pages.",
+  "CVE-2023-4863": {
+    "filename": "scripts/CVE-2023-4863.ps1",
+    "description": "Prompts update of Google Chrome to mitigate libwebp RCE.",
     "language": "PowerShell"
   }
 }
