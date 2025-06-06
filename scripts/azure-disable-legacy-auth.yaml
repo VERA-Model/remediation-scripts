@@ -7,3 +7,5 @@ properties:
   policyDefinitionId: /providers/Microsoft.Authorization/policyDefinitions/DisableLegacyAuth
   enforcementMode: Default
   parameters: {}
+
+# refresh
