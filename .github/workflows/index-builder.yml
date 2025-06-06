@@ -10,7 +10,6 @@ jobs:
   build-index:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -21,6 +20,7 @@ jobs:
 
       - name: Generate index.json
         run: |
+          python <<EOF
           import os, json
           folder = "scripts"
           index = {}
@@ -50,6 +50,7 @@ jobs:
 
           with open("index.json", "w") as outfile:
               json.dump(index, outfile, indent=2)
+          EOF
 
       - name: Commit updated index.json
         run: |
