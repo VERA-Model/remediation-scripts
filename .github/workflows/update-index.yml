@@ -1,0 +1,49 @@
+name: Auto-update index.json
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+  workflow_dispatch:
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate index.json
+        run: |
+          mkdir -p scripts
+          echo "{" > index.json
+          for file in scripts/*; do
+            fname=$(basename "$file")
+            ext="${fname##*.}"
+            lang=$(case "$ext" in
+              ps1) echo "PowerShell" ;;
+              sh) echo "Shell" ;;
+              yaml|yml) echo "YAML" ;;
+              json) echo "JSON" ;;
+              *) echo "Other" ;;
+            esac)
+            desc="Auto-added remediation script for $fname"
+            echo "  \"$fname\": {" >> index.json
+            echo "    \"filename\": \"scripts/$fname\"," >> index.json
+            echo "    \"description\": \"$desc\"," >> index.json
+            echo "    \"language\": \"$lang\"" >> index.json
+            echo "  }," >> index.json
+          done
+          sed -i '$ s/},/}/' index.json  # remove trailing comma
+          echo "}" >> index.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add index.json
+          git commit -m "Auto-update index.json"
+          git push
