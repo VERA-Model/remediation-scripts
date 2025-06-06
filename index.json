@@ -49,13 +49,4 @@
     "description": "Auto-added remediation script for test-update.ps1",
     "language": "PowerShell"
   }
-"azure-disable-legacy-auth": {
-  "filename": "scripts/azure-disable-legacy-auth.yaml",
-  "description": "Azure policy to disable legacy authentication protocols (e.g., IMAP, POP3)",
-  "language": "YAML"
-},
-"aws-block-public-s3": {
-  "filename": "scripts/aws-block-public-s3.sh",
-  "description": "AWS CLI script to block public access to all S3 buckets at the account level",
-  "language": "Shell"
 }
