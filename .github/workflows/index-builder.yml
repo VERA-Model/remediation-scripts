@@ -1,0 +1,60 @@
+name: Auto Update index.json
+
+on:
+  push:
+    paths:
+      - "scripts/**"
+  workflow_dispatch:
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Generate index.json
+        run: |
+          import os, json
+          folder = "scripts"
+          index = {}
+
+          def detect_lang(filename):
+              if filename.endswith(".ps1"):
+                  return "PowerShell"
+              elif filename.endswith(".sh"):
+                  return "Shell"
+              elif filename.endswith(".yaml") or filename.endswith(".yml"):
+                  return "YAML"
+              else:
+                  return "Unknown"
+
+          for fname in os.listdir(folder):
+              if not os.path.isfile(os.path.join(folder, fname)):
+                  continue
+              path = os.path.join(folder, fname)
+              with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                  first_line = f.readline().strip()
+              index_key = os.path.splitext(fname)[0].lower()
+              index[index_key] = {
+                  "filename": f"{folder}/{fname}",
+                  "description": first_line.lstrip("# ").strip() if first_line.startswith("#") else "Remediation script",
+                  "language": detect_lang(fname)
+              }
+
+          with open("index.json", "w") as outfile:
+              json.dump(index, outfile, indent=2)
+
+      - name: Commit updated index.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          git commit -m "Auto-update index.json" || echo "No changes to commit"
+          git push
