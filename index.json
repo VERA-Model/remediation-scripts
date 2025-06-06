@@ -14,6 +14,11 @@
     "description": "Auto-added remediation script for CVE-2023-4863.ps1",
     "language": "PowerShell"
   },
+  "aws-block-public-s3.sh": {
+    "filename": "scripts/aws-block-public-s3.sh",
+    "description": "Auto-added remediation script for aws-block-public-s3.sh",
+    "language": "Shell"
+  },
   "azure-disable-legacy-auth.yaml": {
     "filename": "scripts/azure-disable-legacy-auth.yaml",
     "description": "Auto-added remediation script for azure-disable-legacy-auth.yaml",
