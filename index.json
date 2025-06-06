@@ -29,6 +29,11 @@
     "description": "Auto-added remediation script for defender-enable-tamper-protection.ps1",
     "language": "PowerShell"
   },
+  "macos-audit-log-hardening.sh": {
+    "filename": "scripts/macos-audit-log-hardening.sh",
+    "description": "Auto-added remediation script for macos-audit-log-hardening.sh",
+    "language": "Shell"
+  },
   "test-update.ps1": {
     "filename": "scripts/test-update.ps1",
     "description": "Auto-added remediation script for test-update.ps1",
