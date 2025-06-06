@@ -1,7 +1,12 @@
 {
-  "CVE-2023-4863": {
+  "CVE-2023-4863.ps1": {
     "filename": "scripts/CVE-2023-4863.ps1",
-    "description": "Prompts update of Google Chrome to mitigate libwebp RCE.",
+    "description": "Auto-added remediation script for CVE-2023-4863.ps1",
+    "language": "PowerShell"
+  },
+  "test-update.ps1": {
+    "filename": "scripts/test-update.ps1",
+    "description": "Auto-added remediation script for test-update.ps1",
     "language": "PowerShell"
   }
 }
