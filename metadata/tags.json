@@ -1,0 +1,50 @@
+{
+  "CVE-2023-4863.ps1": {
+    "type": "cve",
+    "platform": "windows",
+    "tool": "chrome",
+    "category": "rce"
+  },
+  "CVE-2022-30190.ps1": {
+    "type": "cve",
+    "platform": "windows",
+    "category": "code-execution",
+    "tool": "office"
+  },
+  "cis-5.2-log-retention.ps1": {
+    "type": "compliance",
+    "platform": "windows",
+    "standard": "cis",
+    "control": "5.2"
+  },
+  "cis-4.6-restrict-admins.ps1": {
+    "type": "compliance",
+    "platform": "windows",
+    "standard": "cis",
+    "control": "4.6"
+  },
+  "aws-block-public-s3.sh": {
+    "type": "cloud",
+    "platform": "aws",
+    "service": "s3",
+    "category": "access-control"
+  },
+  "azure-disable-legacy-auth.yaml": {
+    "type": "cloud",
+    "platform": "azure",
+    "category": "identity",
+    "service": "aad"
+  },
+  "defender-enable-tamper-protection.ps1": {
+    "type": "tool-hardening",
+    "platform": "windows",
+    "tool": "defender",
+    "category": "endpoint-protection"
+  },
+  "macos-audit-log-hardening.sh": {
+    "type": "compliance",
+    "platform": "macos",
+    "standard": "cis",
+    "control": "8.4"
+  }
+}
